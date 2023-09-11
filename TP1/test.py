@@ -12,4 +12,3 @@ def test_3():
 	assert f.puissance(2,-2) == 1/2**2
 	assert f.puissance(-2,3) == -8
 	assert f.puissance(0,0) == 1
-	
