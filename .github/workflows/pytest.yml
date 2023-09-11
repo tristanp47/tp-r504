@@ -11,5 +11,6 @@ jobs:
         uses: actions/setup-python@v4
       - name: Run tests
         run: pytest TP1/test.py
+      - name: Test
       - run: echo "Nom branche: ${{ github.ref }}"
       - run: echo "Nom repo: ${{ runner.os }}."
