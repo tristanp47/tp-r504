@@ -20,4 +20,6 @@ jobs:
         run: echo "Nom branche :" ${{ github.ref }}
       - name: OS
         run: echo "Nom repo :" ${{ runner.os }}.
+      - name: REP
+        run: echo "repo :" ${{ github.repository }}.
         
