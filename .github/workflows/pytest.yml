@@ -16,8 +16,8 @@ jobs:
         run: echo "Nom branche :" ${{ github.ref }}
       - name: OS
         run: echo "Nom repo :" ${{ runner.os }}.
-      - name : Set up Python for Demo
-        uses : actions/setup−python@v4
-        with :
+      - name: Set up Python for Demo
+        uses: actions/setup−python@v4
+        with:
           python−version: $ {{ matrix.python−version }}
         
