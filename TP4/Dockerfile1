@@ -14,4 +14,4 @@ COPY index.html /srv/templates/
 
 COPY app1.py /srv/
 
-CMD ["flash", "--app", "/srv/apps", "run", "--host=0.0.0.0"]
+CMD ["flask", "--app", "/srv/app1", "run", "--host=0.0.0.0"]
