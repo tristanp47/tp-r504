@@ -7,23 +7,23 @@ fi
 docker rm -f $(docker ps -aq)
 if [$? != 0]
 then
-        exit 3
+        exit 2
 fi
 
 docker image  prune -a -f
 if [$? != 0]
 then
-        exit 4
+        exit 2
 fi
 
 docker volume prune -f
 if [$? != 0]
 then
-        exit 5
+        exit 2
 fi
 
 docker network prune -f
 if [$? != 0]
 then
-        exit 6
+        exit 2
 fi

@@ -6,3 +6,8 @@ docker run --rm  -d \
   --env MYSQL\_ROOT\_PASSWORD=foo \
   --network net-tp4 \
   mysql
+if [ $? != 0 ]; then
+        echo "echec de la commande"
+        exit 2
+fi
+
