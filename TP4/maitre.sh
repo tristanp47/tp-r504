@@ -16,6 +16,8 @@ if [ $? != 0 ]; then
 	exit 2
 fi
 
+sleep 30
+
 ./filldb.sh
 if [ $? != 0 ]; then
         echo "echec du script filledb"
