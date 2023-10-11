@@ -7,7 +7,7 @@ docker run --rm  -d \
   --network net-tp4 \
   mysql
 if [ $? != 0 ]; then
-        echo "echec de la commande"
+        echo "echec de la commande docker run"
         exit 2
 fi
 
