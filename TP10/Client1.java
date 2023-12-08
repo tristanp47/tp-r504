@@ -9,10 +9,21 @@ public class Client1
 	public static void main( String[] args )
 	{
 		try {
+			if (args.length == 0) {
+            			System.out.println("Aucun argument");
+				System.exit(1);
+        		}
 			CloseableHttpClient client = HttpClients.createDefault();
-			String url = "https://" + args[0];
+			String url = "http://" + args[0];
 			HttpGet request = new HttpGet(url);
-		}
+			
+			System.out.println( "Executing request " + request.getRequestLine() );
+			CloseableHttpResponse resp = client.execute(request);
+	
+			System.out.println( "Response Line: " + resp.getStatusLine() );
+			System.out.println( "Response Code: " + resp.getStatusLine().getStatusCode() );
+		
+		} 
 		catch ( Exception ex ) {
 			System.out.println( "erreur!" );
 			ex.printStackTrace();
