@@ -19,16 +19,15 @@ public class Client3
 			CloseableHttpClient client = HttpClients.createDefault();
 			String url = "http://" + args[0];
 			HttpGet request = new HttpGet(url);
-
-			System.out.println( "Executing request " + request.getRequestLine() );
 			CloseableHttpResponse resp = client.execute(request);
-	
-			System.out.println( "Response Line: " + resp.getStatusLine() );
-			System.out.println( "Response Code: " + resp.getStatusLine().getStatusCode() );
 			
 			InputStreamReader isr = new InputStreamReader( resp.getEntity().getContent() );
 			JsonReader reader = Json.createReader(isr);
 			JsonObject jsonObject = reader.readObject();
+
+			System.out.println( "Acteurs Principaux = " + jsonObject.getString("Actors") );
+			System.out.println( "Date de sortie = " + jsonObject.getString("Released") );
+
 			JsonArray tab = jsonObject.getJsonArray("Ratings");
 			for( int i=0; i<tab.size(); i++ )
 			{
